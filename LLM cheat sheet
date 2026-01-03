@@ -1,0 +1,80 @@
+# 🧠 LLM Engineer Cheat Sheet
+
+## 1️⃣ Model Basics
+
+* **Architecture:** Transformers (self-attention, feed-forward, residuals, layer norm)
+* **Attention:**
+
+  * Focuses on relevant tokens.
+  * Multi-head allows learning different patterns in parallel.
+* **Tokenization:**
+
+  * BPE / SentencePiece / GPT tokenizer
+  * Affects input length & memory usage
+* **Context length:** Max tokens the model can “see”
+
+---
+
+## 2️⃣ Training & Adaptation
+
+* **Pretraining:** Large-scale unsupervised learning on text
+* **Fine-tuning:** Task-specific adjustment
+* **Parameter-efficient tuning:** LoRA, PEFT (adapt large models without retraining everything)
+* **Instruction tuning:** Makes model follow human instructions better
+* **RLHF (Reinforcement Learning from Human Feedback):** Improves alignment & safety
+
+---
+
+## 3️⃣ Inference & Generation
+
+* **Autoregressive token generation** (step-by-step) → sequential
+* **Decoding strategies:**
+
+  * Greedy, Beam Search, Sampling
+  * Top-k / Top-p (nucleus)
+  * Temperature: controls randomness
+* **Memory & latency tricks:**
+
+  * Mixed precision (FP16/BF16)
+  * Activation checkpointing
+  * Batching & caching past key/values
+
+---
+
+## 4️⃣ Parallelization & Scaling
+
+* **Data parallelism:** Split batch across GPUs
+* **Model parallelism:** Split model across GPUs
+* **Pipeline parallelism:** Split layers across devices in a “pipeline”
+* Transformers allow **more parallelization** than RNNs (less sequential dependency)
+
+---
+
+## 5️⃣ Prompting & Context
+
+* **Prompt engineering:** Clear instructions, few-shot examples, chain-of-thought
+* **Context management:** Sliding windows for long sequences
+* **RAG (Retrieval-Augmented Generation):** Pull external knowledge to improve accuracy
+* **Safety:** Guardrails for bias, hallucinations, harmful content
+
+---
+
+## 6️⃣ Evaluation & Metrics
+
+* **Perplexity:** Model’s predictive uncertainty
+* **ROUGE / BLEU:** Quality of generated text
+* **Factuality checks:** Compare outputs with trusted sources
+* **Efficiency:** Latency, throughput, memory footprint
+
+---
+
+### 🔑 Quick Memory Tricks
+
+* **TAPE:** Tokenization → Attention → Pretrain → Evaluate
+* **RIP:** RAG → Instruction → Parallelization (deployment mindset)
+* **LoRA:** Light & fast fine-tuning without full retraining
+
+---
+
+
+
