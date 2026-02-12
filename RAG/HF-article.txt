@@ -1,0 +1,201 @@
+# ✅ What You Have Already Completed (From This Article)
+
+Based on what you told me earlier, you’ve implemented:
+
+### 1️⃣ Multi-document support
+
+✔ Originally: single doc
+✔ You: multiple docs in vector store
+
+---
+
+### 2️⃣ Multi-topic handling (basic level)
+
+✔ You improved threshold tuning
+✔ You allowed more flexible semantic matching
+✔ You reduced word-order sensitivity ("cats and dogs" ≈ "dogs and cats")
+
+So you partially addressed this limitation:
+
+> “If the question covers multiple topics, the system may not answer well.”
+
+But:
+
+* You improved similarity behavior
+* You did NOT implement multi-query retrieval or query rewriting yet (unless you didn’t mention it)
+
+So this is **partially completed**, not fully.
+
+---
+
+### 3️⃣ Better similarity tuning
+
+✔ Adjusted threshold
+✔ Improved semantic matching
+
+This addresses:
+
+> “Top N results based only on cosine similarity may not always be best.”
+
+But you have NOT added:
+
+* Re-ranking model
+* Hybrid search
+* Cross-encoder reranker
+
+So this is **partially improved**, but not architecturally upgraded.
+
+---
+
+### 4️⃣ Still In-Memory Database
+
+❌ You are still using in-memory vector storage (based on original tutorial).
+
+Not yet implemented:
+
+* Qdrant
+* Pinecone
+* pgvector
+* FAISS persistent storage
+
+So scalability improvement is still pending.
+
+---
+
+### 5️⃣ Chunking Strategy
+
+Article says:
+
+> “Each sentence is a chunk.”
+
+If you did not change this, then:
+
+❌ Still basic sentence-level chunking
+❌ No overlap
+❌ No semantic chunking
+❌ No metadata-aware chunking
+
+So chunking improvement is still open.
+
+---
+
+### 6️⃣ Model Size Upgrade
+
+Article says:
+
+> “We use a small 1B model.”
+
+If you're still using that:
+❌ Not upgraded
+
+If you changed to a stronger LLM:
+✔ Then that’s done.
+
+---
+
+# 📊 Summary: What’s Done vs Not Done
+
+| Improvement Area              | Status           |
+| ----------------------------- | ---------------- |
+| Multi-doc support             | ✅ Completed      |
+| Multi-topic support (basic)   | 🟡 Partially     |
+| Threshold tuning              | ✅ Completed      |
+| Query rewriting / multi-query | ❌ Not done       |
+| Reranking model               | ❌ Not done       |
+| Hybrid search                 | ❌ Not done       |
+| Scalable vector DB            | ❌ Not done       |
+| Advanced chunking             | ❌ Not done       |
+| Larger LLM                    | ❓ Depends on you |
+| Graph RAG                     | ❌ Not done       |
+| Hybrid KG + Vector RAG        | ❌ Not done       |
+| Modular RAG                   | ❌ Not done       |
+
+---
+
+# 🧠 Important: Core Improvements vs Advanced Variants
+
+There are two categories here.
+
+---
+
+# Category 1: Core RAG Improvements (You SHOULD Do)
+
+These are practical, production-relevant:
+
+1. Multi-query retrieval
+2. Reranking
+3. Better chunking
+4. Persistent vector DB
+5. Evaluation metrics
+6. Source attribution
+
+These make you job-ready.
+
+---
+
+# Category 2: Research-Level Variants (Optional for Now)
+
+These are more experimental:
+
+* Graph RAG
+* Hybrid KG + Vector RAG
+* Modular RAG with routing
+* Branching RAG
+* Looping RAG pipelines
+
+These are impressive but not necessary for your current project.
+
+---
+
+# 🎯 What’s Actually Left From This Article?
+
+From this article alone, the unfinished items are:
+
+### 🔴 Major Missing
+
+* Query rewriting / multi-query retrieval
+* Reranking model
+* Scalable vector database
+* Better chunking strategy
+
+### 🟡 Optional but Mentioned
+
+* Larger model
+
+### 🔵 Separate Advanced Topics
+
+* Graph RAG
+* Hybrid RAG (KG + Vector)
+* Modular RAG
+
+---
+
+# 🏆 What Should You Finish Before Moving On?
+
+For an LLM engineer portfolio, I recommend you finish:
+
+1. ✅ Multi-query rewriting (LLM generates better search query)
+2. ✅ Add reranker
+3. ✅ Improve chunking
+4. ✅ Use real vector DB (Qdrant or pgvector)
+5. ✅ Add evaluation script
+
+If you do these, you’ve exhausted this article at a serious level.
+
+---
+
+# 🔎 Reality Check
+
+Right now your project is:
+
+> Enhanced tutorial-level RAG
+
+If you add reranking + evaluation:
+
+It becomes:
+
+> Retrieval-optimized RAG system
+
+That’s a massive jump in perceived skill.
+
+---

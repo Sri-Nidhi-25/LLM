@@ -33,9 +33,12 @@ for filepath, label in source_files:
 
 print(f"Chunks to embed: {len(dataset)}")
 
+def normalize(text):
+    return text.lower().strip()
+
 # Embed and add to vector DB
 def add_to_db(text, label):
-    out = ollama.embed(model=EMBEDDING_MODEL, input=text)
+    out = ollama.embed(model=EMBEDDING_MODEL, input=normalize(text))
     embs = out.get("embeddings", [])
     if not embs:
         print(f"⚠️ Skipped (no embeddings): {text[:40]}…")

@@ -16,13 +16,16 @@ def cosine_similarity(a, b):
     norm_b = math.sqrt(sum(y * y for y in b))
     return dot / (norm_a * norm_b)
 
-def retrieve(query, top_n=3):
+def retrieve(query, top_n=5, threshold=0.75):
     query_embedding = ollama.embed(model=EMBEDDING_MODEL, input=query)["embeddings"][0]
     sims = []
     for chunk, label, emb in VECTOR_DB:
-        sims.append((chunk, label, cosine_similarity(query_embedding, emb)))
+        score = cosine_similarity(query_embedding, emb)
+        if score >= threshold:
+            sims.append((chunk, label, score))
     sims.sort(key=lambda x: x[2], reverse=True)
     return sims[:top_n]
+
 
 while True:
     input_query = input("\nAsk a question (or type exit): ")
